@@ -16,6 +16,11 @@ const __dirname = path.dirname(__filename);
 // Раздаём статические файлы из public
 app.use(express.static(path.join(__dirname, "public")));
 
+// Тестовый маршрут
+app.get("/", (req, res) => {
+  res.send("AI Assistant server is running!");
+});
+
 // Чат с OpenAI
 app.post("/chat", async (req, res) => {
   try {
